@@ -1,0 +1,655 @@
+Act as a Senior Product Designer, Senior React Architect, UI/UX Designer, Frontend Lead Engineer, SEO Expert, Legal Compliance Expert, and Payment Gateway Compliance Consultant.
+
+Build a COMPLETE production-ready React website (NOT Next.js) using:
+
+- React 19
+- Vite
+- React Router DOM
+- Tailwind CSS
+- Framer Motion
+- React Hook Form
+- React Icons
+- Axios
+- Lucide React
+- Responsive Design
+- Mobile First
+- Modern Animations
+- Glassmorphism
+- Soft Shadows
+- Gradient UI
+- SEO Optimized
+- Accessibility (WCAG)
+- Lazy Loading
+- Reusable Components
+
+The website should look like a premium startup website similar to Stripe, Razorpay, Linear, Notion, Clerk, Framer and Vercel.
+
+Theme:
+Modern
+Premium
+Minimal
+Professional
+Blue + Indigo + White
+Rounded UI
+Glass Cards
+Smooth Animations
+Professional Illustrations
+
+=====================================================
+
+PROJECT NAME
+
+JobApply Portal
+
+A platform where users can submit their details to apply for jobs.
+
+No login required.
+
+Only a beautiful landing page and job application form.
+
+=====================================================
+
+Purpose
+
+This website will also be submitted for Razorpay Live Key verification.
+
+Therefore create ALL pages that Razorpay generally expects.
+
+=====================================================
+
+Create these pages
+
+1. Home
+2. About Us
+3. Contact Us
+4. Careers
+5. Privacy Policy
+6. Terms & Conditions
+7. Refund Policy
+8. Cancellation Policy
+9. Shipping & Delivery Policy
+10. Cookie Policy
+11. Disclaimer
+12. FAQ
+13. Support
+14. Job Application
+15. Thank You Page
+16. 404 Page
+
+=====================================================
+
+Navbar
+
+Logo
+
+Home
+
+About
+
+Careers
+
+Apply
+
+FAQ
+
+Contact
+
+Support
+
+Responsive Hamburger Menu
+
+Sticky Navigation
+
+Blur Background
+
+Scroll Effect
+
+=====================================================
+
+Hero Section
+
+Large Heading
+
+Start Your Career Journey Today
+
+Subtitle
+
+Apply for your dream job in minutes.
+
+CTA Button
+
+Apply Now
+
+Secondary Button
+
+Learn More
+
+Animated Illustration
+
+Floating Shapes
+
+Gradient Background
+
+=====================================================
+
+Trusted Companies Section
+
+Company Logos
+
+Animated
+
+=====================================================
+
+Features Section
+
+Easy Application
+
+Secure Data
+
+Fast Processing
+
+Quick Response
+
+Verified Platform
+
+=====================================================
+
+How It Works
+
+Step 1
+
+Fill Form
+
+↓
+
+Step 2
+
+Submit Documents
+
+↓
+
+Step 3
+
+Application Review
+
+↓
+
+Step 4
+
+Get Response
+
+Beautiful Timeline
+
+=====================================================
+
+Benefits Section
+
+Cards
+
+Icons
+
+Hover Animation
+
+=====================================================
+
+Statistics Section
+
+Animated Counter
+
+1000+
+
+Applications
+
+500+
+
+Candidates
+
+120+
+
+Companies
+
+98%
+
+Success Rate
+
+=====================================================
+
+Testimonials
+
+Cards
+
+Avatar
+
+Rating
+
+=====================================================
+
+FAQ
+
+Accordion
+
+=====================================================
+
+Call To Action
+
+Apply Now
+
+=====================================================
+
+Footer
+
+About
+
+Quick Links
+
+Policies
+
+Social Links
+
+Address
+
+Email
+
+Phone
+
+=====================================================
+
+Job Application Page
+
+Large Multi Step Form
+
+Step 1
+
+Personal Information
+
+First Name
+
+Last Name
+
+Gender
+
+DOB
+
+Email
+
+Phone
+
+WhatsApp
+
+Profile Photo Upload
+
+=====================================================
+
+Step 2
+
+Address
+
+Country
+
+State
+
+City
+
+Pin Code
+
+Current Address
+
+Permanent Address
+
+=====================================================
+
+Step 3
+
+Education
+
+Qualification
+
+University
+
+Passing Year
+
+Percentage
+
+Resume Upload
+
+Certificates Upload
+
+=====================================================
+
+Step 4
+
+Professional
+
+Experience
+
+Current Company
+
+Current Salary
+
+Expected Salary
+
+Notice Period
+
+Skills
+
+LinkedIn
+
+Github
+
+Portfolio
+
+=====================================================
+
+Step 5
+
+Additional
+
+Preferred Location
+
+Job Type
+
+Department
+
+Languages
+
+Declaration Checkbox
+
+=====================================================
+
+Submit Button
+
+Loading Animation
+
+Success Modal
+
+Redirect Thank You Page
+
+=====================================================
+
+Validation
+
+React Hook Form
+
+Proper Errors
+
+Upload Validation
+
+Phone Validation
+
+Email Validation
+
+=====================================================
+
+Contact Page
+
+Google Map
+
+Contact Form
+
+Email
+
+Phone
+
+Office Address
+
+Working Hours
+
+=====================================================
+
+Support Page
+
+Support Form
+
+Email
+
+FAQ
+
+Help Section
+
+=====================================================
+
+About Page
+
+Company Story
+
+Mission
+
+Vision
+
+Values
+
+Timeline
+
+=====================================================
+
+Careers Page
+
+Current Openings
+
+Cards
+
+Apply Button
+
+=====================================================
+
+Policy Pages
+
+Generate professional legal content.
+
+Privacy Policy
+
+Terms
+
+Refund
+
+Cancellation
+
+Shipping
+
+Cookie
+
+Disclaimer
+
+Must look professional.
+
+=====================================================
+
+SEO
+
+React Helmet
+
+Meta Tags
+
+Open Graph
+
+Twitter Cards
+
+Robots
+
+Canonical
+
+Schema.org
+
+=====================================================
+
+Performance
+
+Code Splitting
+
+Lazy Loading
+
+Reusable Components
+
+Folder Structure
+
+=====================================================
+
+Animations
+
+Framer Motion
+
+Fade
+
+Slide
+
+Scale
+
+Scroll Reveal
+
+Counter Animation
+
+Hover Effects
+
+=====================================================
+
+Accessibility
+
+Keyboard Navigation
+
+Proper Labels
+
+ARIA
+
+Semantic HTML
+
+=====================================================
+
+Responsive
+
+Desktop
+
+Laptop
+
+Tablet
+
+Mobile
+
+=====================================================
+
+Design Requirements
+
+Rounded 24px cards
+
+Gradient Buttons
+
+Soft Shadows
+
+Premium Typography
+
+Inter Font
+
+Glassmorphism
+
+Modern Icons
+
+Large White Spaces
+
+Smooth Hover
+
+Beautiful Inputs
+
+Animated Background
+
+=====================================================
+
+Color Palette
+
+Primary
+
+#2563EB
+
+Secondary
+
+#4F46E5
+
+Accent
+
+#06B6D4
+
+Background
+
+#F8FAFC
+
+Dark
+
+#0F172A
+
+Text
+
+#334155
+
+=====================================================
+
+Folder Structure
+
+src/
+
+components/
+
+layouts/
+
+pages/
+
+sections/
+
+hooks/
+
+services/
+
+routes/
+
+assets/
+
+utils/
+
+constants/
+
+styles/
+
+=====================================================
+
+Generate
+
+Complete React Project
+
+Complete Routing
+
+Reusable Components
+
+Dummy API
+
+Axios Integration
+
+Responsive Tailwind Classes
+
+Production Ready Code
+
+Clean Architecture
+
+Industry Standards
+
+=====================================================
+
+Bonus
+
+Dark Mode
+
+Back To Top Button
+
+Floating WhatsApp Button
+
+Loading Screen
+
+Skeleton Loader
+
+Toast Notifications
+
+404 Illustration
+
+Success Animation
+
+Modern SVG Background
+
+=====================================================
+
+Everything should be production-ready, clean, scalable, responsive, and polished enough to pass Razorpay business website verification while providing an excellent candidate application experience.
