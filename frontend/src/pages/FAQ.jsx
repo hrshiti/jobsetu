@@ -10,7 +10,7 @@ const FAQS = [
   },
   {
     q: 'Do you charge any processing or application fees?',
-    a: 'Absolutely not! JobSetu Portal is 100% free for all candidates. We will never ask you for any fee, registration charges, or card details. If someone asks for money representing JobSetu Portal, it is a scam.'
+    a: 'Absolutely not! ApplyNova Portal is 100% free for all candidates. We will never ask you for any fee, registration charges, or card details. If someone asks for money representing ApplyNova Portal, it is a scam.'
   },
   {
     q: 'What formats are supported for resume and certificates?',
@@ -26,7 +26,7 @@ const FAQS = [
   },
   {
     q: 'How can I update or delete my submitted application?',
-    a: 'If you want to modify your details or delete your application records, simply submit a request using our Support Page or email us directly at support@jobsetu.com.'
+    a: 'If you want to modify your details or delete your application records, simply submit a request using our Support Page or email us directly at jjmisarajeev@gmail.com.'
   }
 ];
 
@@ -40,8 +40,8 @@ export default function FAQ() {
   return (
     <div className="max-w-3xl mx-auto py-8">
       <SEO 
-        title="Frequently Asked Questions - JobSetu Portal" 
-        description="Got questions about applying, fees, security, or roles? Find answers to frequently asked questions on JobSetu Portal."
+        title="Frequently Asked Questions - ApplyNova Portal" 
+        description="Got questions about applying, fees, security, or roles? Find answers to frequently asked questions on ApplyNova Portal."
       />
 
       <div className="text-center mb-12">

@@ -27,7 +27,7 @@ export default function ThankYou() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-[70vh] text-center px-6 max-w-xl mx-auto">
-      <SEO title="Thank You for Applying - JobSetu Portal" robots="noindex, nofollow" />
+      <SEO title="Thank You for Applying - ApplyNova Portal" robots="noindex, nofollow" />
 
       {/* Success Animation Container */}
       <motion.div

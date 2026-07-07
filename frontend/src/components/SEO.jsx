@@ -2,14 +2,14 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
 export default function SEO({ 
-  title = 'JobSetu Portal - Apply for your dream job', 
+  title = 'ApplyNova Portal - Apply for your dream job', 
   description = 'Apply for your dream job in minutes on our premium career portal. Fast processing, easy application, and secure data handling.', 
   keywords = 'careers, jobs, application, frontend developer, ui/ux designer, product manager, support executive',
   ogImage = '/og-image.png',
   canonicalUrl = window.location.href,
   robots = 'index, follow'
 }) {
-  const siteTitle = title.includes('JobSetu Portal') ? title : `${title} | JobSetu Portal`;
+  const siteTitle = title.includes('ApplyNova Portal') ? title : `${title} | ApplyNova Portal`;
 
   return (
     <Helmet>

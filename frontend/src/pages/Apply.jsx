@@ -180,7 +180,7 @@ export default function Apply() {
   return (
     <div className="max-w-4xl mx-auto py-8">
       <SEO 
-        title="Job Application Form - JobSetu Portal" 
+        title="Job Application Form - ApplyNova Portal" 
         description="Fill and submit the multi-step job application form to apply for open engineering, design, and operations roles."
       />
 

@@ -5,7 +5,7 @@ export const POLICIES = {
     sections: [
       {
         heading: '1. Introduction',
-        content: 'Welcome to JobSetu Portal. We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you about how we look after your personal data when you visit our website (regardless of where you visit it from) and tell you about your privacy rights and how the law protects you.'
+        content: 'Welcome to ApplyNova Portal. We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you about how we look after your personal data when you visit our website (regardless of where you visit it from) and tell you about your privacy rights and how the law protects you.'
       },
       {
         heading: '2. The Data We Collect About You',
@@ -31,11 +31,11 @@ export const POLICIES = {
     sections: [
       {
         heading: '1. Agreement to Terms',
-        content: 'By accessing or using the JobSetu Portal, you agree to be bound by these Terms and Conditions. If you disagree with any part of these terms, you may not access the service.'
+        content: 'By accessing or using the ApplyNova Portal, you agree to be bound by these Terms and Conditions. If you disagree with any part of these terms, you may not access the service.'
       },
       {
         heading: '2. Use License',
-        content: 'Permission is granted to temporarily view the materials (information or software) on JobSetu Portal for personal, non-commercial transitory viewing only. You shall not modify or copy the materials, use the materials for any commercial purpose, or attempt to decompile or reverse engineer any software contained on the website.'
+        content: 'Permission is granted to temporarily view the materials (information or software) on ApplyNova Portal for personal, non-commercial transitory viewing only. You shall not modify or copy the materials, use the materials for any commercial purpose, or attempt to decompile or reverse engineer any software contained on the website.'
       },
       {
         heading: '3. Accuracy of Information',
@@ -43,7 +43,7 @@ export const POLICIES = {
       },
       {
         heading: '4. Intellectual Property',
-        content: 'The original content, features, and functionality of this portal are and will remain the exclusive property of JobSetu Portal and its licensors. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent.'
+        content: 'The original content, features, and functionality of this portal are and will remain the exclusive property of ApplyNova Portal and its licensors. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent.'
       },
       {
         heading: '5. Governing Law',
@@ -57,15 +57,15 @@ export const POLICIES = {
     sections: [
       {
         heading: '1. Application Processing Fees',
-        content: 'JobSetu Portal does not charge candidates any fees for applying to jobs listed on our site. All job applications submitted through our platform are completely free of charge.'
+        content: 'ApplyNova Portal offers a Basic Application which is free of charge, as well as a Premium Application processing service that incurs a nominal fee. The fee for Premium Application is clearly displayed on the pricing section.'
       },
       {
         heading: '2. Refund Eligibility',
-        content: 'Since there are no charges, payments, or processing fees required from users/candidates to submit application details on our website, there is no provision for refunds. Any third-party portals claiming to charge fees on behalf of JobSetu Portal are fraudulent, and we are not liable for such transactions.'
+        content: 'For Premium Applications, if a candidate wishes to cancel their application before the technical review begins, they may request a refund. Approved refunds will be processed and credited back to the original payment method within 5-7 working days.'
       },
       {
         heading: '3. Fraud Alert',
-        content: 'We will never ask you to pay for job applications, interview bookings, or document verification. Please do not share card details, net banking credentials, or UPI details with anyone claiming to represent JobSetu Portal.'
+        content: 'We will never ask you to pay for job applications, interview bookings, or document verification. Please do not share card details, net banking credentials, or UPI details with anyone claiming to represent ApplyNova Portal.'
       }
     ]
   },
@@ -75,11 +75,11 @@ export const POLICIES = {
     sections: [
       {
         heading: '1. Application Cancellation',
-        content: 'Once an application is submitted on JobSetu Portal, it cannot be canceled or recalled by the candidate from the web interface. However, candidates can request the removal or deletion of their application details by contacting our support team at support@jobsetu.com.'
+        content: 'Once an application is submitted on ApplyNova Portal, it cannot be canceled or recalled by the candidate from the web interface. However, candidates can request the removal or deletion of their application details by contacting our support team at jjmisarajeev@gmail.com.'
       },
       {
         heading: '2. System Initiated Cancellation',
-        content: 'JobSetu Portal reserves the right to cancel or archive applications that contain incomplete data, suspicious files, spam content, or violate our terms and conditions without prior notice to the applicant.'
+        content: 'ApplyNova Portal reserves the right to cancel or archive applications that contain incomplete data, suspicious files, spam content, or violate our terms and conditions without prior notice to the applicant.'
       }
     ]
   },
@@ -89,11 +89,11 @@ export const POLICIES = {
     sections: [
       {
         heading: '1. Nature of Services',
-        content: 'JobSetu Portal is an online job application platform providing digital services. We do not sell, ship, or deliver any physical goods or tangible items.'
+        content: 'ApplyNova Portal is an online job application platform providing digital services. We do not sell, ship, or deliver any physical goods or tangible items.'
       },
       {
         heading: '2. Delivery of Digital Content',
-        content: 'Upon successful submission of your job application form, a digital confirmation is immediately generated on the screen and redirecting you to a Thank You confirmation page. An email confirmation is also dispatched to the applicant\'s registered email address within 24 hours of submission.'
+        content: 'Upon successful submission of your job application form and payment (if applicable), a digital confirmation is immediately generated on the screen and redirecting you to a Thank You confirmation page. An email confirmation, along with any Premium Resume Assessment reports, is dispatched to the applicant\'s registered email address within 24 hours of submission.'
       }
     ]
   },
@@ -125,11 +125,11 @@ export const POLICIES = {
       },
       {
         heading: '2. Job Guarantees',
-        content: 'Submitting a job application through JobSetu Portal does not guarantee an interview, an offer of employment, or placement in any position. Hiring decisions are solely at the discretion of the respective companies and hiring managers.'
+        content: 'Submitting a job application through ApplyNova Portal does not guarantee an interview, an offer of employment, or placement in any position. Hiring decisions are solely at the discretion of the respective companies and hiring managers.'
       },
       {
         heading: '3. Third-Party Links',
-        content: 'Through this website you are able to link to other websites which are not under the control of JobSetu Portal. We have no control over the nature, content and availability of those sites. The inclusion of any links does not necessarily imply a recommendation or endorse the views expressed within them.'
+        content: 'Through this website you are able to link to other websites which are not under the control of ApplyNova Portal. We have no control over the nature, content and availability of those sites. The inclusion of any links does not necessarily imply a recommendation or endorse the views expressed within them.'
       }
     ]
   }

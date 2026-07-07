@@ -50,7 +50,7 @@ const TESTIMONIALS = [
   {
     name: 'Ananya Sharma',
     role: 'Senior React Developer',
-    text: 'Applying through JobSetu Portal was a breeze! I submitted my details in 5 minutes, got updates via WhatsApp, and landed my role at a top SaaS company.',
+    text: 'Applying through ApplyNova Portal was a breeze! I submitted my details in 5 minutes, got updates via WhatsApp, and landed my role at a top SaaS company.',
     rating: 5,
     avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face'
   },
@@ -204,10 +204,10 @@ export default function Home() {
             {/* Central visual shape */}
             <div className="w-full h-full flex flex-col justify-center items-center gap-4 text-center">
               <div className="w-20 h-20 rounded-3xl bg-gradient-to-tr from-blue-600 to-indigo-600 shadow-lg shadow-indigo-500/30 flex items-center justify-center text-white text-3xl font-black">
-                JS
+                AN
               </div>
               <div>
-                <h3 className="font-extrabold text-slate-900 dark:text-white text-lg">JobSetu Gateway</h3>
+                <h3 className="font-extrabold text-slate-900 dark:text-white text-lg">ApplyNova Gateway</h3>
                 <p className="text-xs text-slate-400 mt-1 max-w-[200px]">Secure, fast, and compliant recruitment application pipeline.</p>
               </div>
             </div>
@@ -255,6 +255,70 @@ export default function Home() {
               </p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Pricing Section (Razorpay Compliance) */}
+      <section className="space-y-12 pb-12">
+        <div className="text-center">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+            Transparent Pricing
+          </h2>
+          <p className="text-slate-500 dark:text-slate-400 mt-2 text-sm md:text-base max-w-lg mx-auto">
+            Choose the application plan that best suits your career goals.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto px-6">
+          {/* Free Plan */}
+          <div className="bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800/80 rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
+            <h3 className="font-bold text-xl text-slate-900 dark:text-white">Basic Application</h3>
+            <div className="my-4">
+              <span className="text-4xl font-black text-slate-900 dark:text-white">Free</span>
+            </div>
+            <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">Standard job application processing.</p>
+            <ul className="space-y-3 mb-8 text-sm text-slate-600 dark:text-slate-300">
+              <li className="flex gap-2 items-center">
+                <div className="w-5 h-5 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-xs">✓</div>
+                Standard profile review
+              </li>
+              <li className="flex gap-2 items-center">
+                <div className="w-5 h-5 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-xs">✓</div>
+                Email notifications
+              </li>
+              <li className="flex gap-2 items-center">
+                <div className="w-5 h-5 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-xs">✓</div>
+                Basic resume parsing
+              </li>
+            </ul>
+            <Link to="/apply" className="block w-full py-3 text-center rounded-xl border border-slate-200 dark:border-slate-700 font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">Apply Free</Link>
+          </div>
+
+          {/* Premium Plan */}
+          <div className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/10 dark:to-indigo-900/10 border border-blue-200 dark:border-blue-800/50 rounded-2xl p-8 shadow-md relative hover:shadow-lg transition-shadow">
+            <div className="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold px-3 py-1.5 rounded-bl-xl rounded-tr-xl">RECOMMENDED</div>
+            <h3 className="font-bold text-xl text-slate-900 dark:text-white">Premium Application</h3>
+            <div className="my-4 flex items-baseline gap-1">
+              <span className="text-4xl font-black text-blue-600 dark:text-blue-400">₹99</span>
+              <span className="text-sm text-slate-500 font-medium">/application</span>
+            </div>
+            <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">Priority processing and expert resume review.</p>
+            <ul className="space-y-3 mb-8 text-sm text-slate-600 dark:text-slate-300">
+              <li className="flex gap-2 items-center text-blue-700 dark:text-blue-300">
+                <div className="w-5 h-5 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-xs">✓</div>
+                Priority review within 24 hours
+              </li>
+              <li className="flex gap-2 items-center text-blue-700 dark:text-blue-300">
+                <div className="w-5 h-5 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-xs">✓</div>
+                Expert resume assessment report
+              </li>
+              <li className="flex gap-2 items-center text-blue-700 dark:text-blue-300">
+                <div className="w-5 h-5 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-xs">✓</div>
+                Direct WhatsApp updates
+              </li>
+            </ul>
+            <Link to="/apply" className="block w-full py-3 text-center rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow-lg shadow-blue-500/20 transition-colors">Get Premium</Link>
+          </div>
         </div>
       </section>
 

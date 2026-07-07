@@ -7,7 +7,7 @@ import SEO from '../components/SEO';
 export default function NotFound() {
   return (
     <div className="flex flex-col items-center justify-center min-h-[70vh] text-center px-6">
-      <SEO title="Page Not Found - JobSetu Portal" robots="noindex, nofollow" />
+      <SEO title="Page Not Found - ApplyNova Portal" robots="noindex, nofollow" />
 
       {/* Floating Circles/Blur Background */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-72 h-72 bg-indigo-500/10 dark:bg-indigo-500/5 rounded-full blur-3xl pointer-events-none"></div>
