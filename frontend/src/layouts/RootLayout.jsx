@@ -77,10 +77,10 @@ export default function RootLayout({ children }) {
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 group">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center text-white font-bold shadow-md shadow-indigo-500/20 group-hover:scale-105 transition-transform">
-              JS
+              AN
             </div>
             <span className="font-extrabold text-xl tracking-tight bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 bg-clip-text text-transparent">
-              JobSetu
+              ApplyNova
             </span>
           </Link>
           <nav className="hidden md:flex items-center gap-1">
@@ -176,19 +176,19 @@ export default function RootLayout({ children }) {
           <div>
             <Link to="/" className="flex items-center gap-2 mb-6">
               <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center text-white font-bold shadow-md shadow-indigo-500/10">
-                JS
+                AN
               </div>
               <span className="font-bold text-lg tracking-tight bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 bg-clip-text text-transparent">
-                JobSetu Portal
+                ApplyNova Portal
               </span>
             </Link>
             <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 leading-relaxed">
-              JobSetu Portal is a secure, premium application gateway connecting top talent with industry-leading startups and enterprise companies.
+              ApplyNova Portal is a secure, premium application gateway connecting top talent with industry-leading startups and enterprise companies.
             </p>
             <div className="space-y-2 text-sm text-slate-600 dark:text-slate-300">
-              <p>📍 HSR Layout, Sector 6, Bengaluru, Karnataka, 560102</p>
-              <p>✉️ support@jobsetu.com</p>
-              <p>📞 +91 80 4912 3456</p>
+              <p>📍 rajeev, Barod, Post Office - SalayTehsil - Aron, District - GunaMadhya Pradesh - 473101</p>
+              <p>✉️ jjmisarajeev@gmail.com</p>
+              <p>📞 9630409952</p>
             </div>
           </div>
           <div>
@@ -255,7 +255,7 @@ export default function RootLayout({ children }) {
 
         <div className="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-slate-100 dark:border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-slate-500 dark:text-slate-400 text-center sm:text-left">
-            © {new Date().getFullYear()} JobSetu Portal. All rights reserved.
+            © {new Date().getFullYear()} ApplyNova Portal. All rights reserved.
           </p>
           <div className="flex gap-6 text-xs text-slate-400">
             <span>Razorpay Verification Sandbox Site</span>

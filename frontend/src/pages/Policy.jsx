@@ -41,8 +41,8 @@ export default function Policy({ type }) {
   return (
     <div className="max-w-4xl mx-auto py-8">
       <SEO 
-        title={`${policy.title} - JobSetu Portal`} 
-        description={`Read the official ${policy.title} of JobSetu Portal. Updated on ${policy.lastUpdated}.`}
+        title={`${policy.title} - ApplyNova Portal`} 
+        description={`Read the official ${policy.title} of ApplyNova Portal. Updated on ${policy.lastUpdated}.`}
       />
 
       <motion.div

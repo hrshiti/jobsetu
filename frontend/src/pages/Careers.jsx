@@ -33,7 +33,7 @@ export default function Careers() {
     <div className="py-8">
       <SEO 
         title="Careers - Join Our Team" 
-        description="Browse open job roles at JobSetu Portal. Apply for Senior Frontend Engineer, UI/UX Designer, Product Manager, and more."
+        description="Browse open job roles at ApplyNova Portal. Apply for Senior Frontend Engineer, UI/UX Designer, Product Manager, and more."
       />
 
       {/* Header section */}

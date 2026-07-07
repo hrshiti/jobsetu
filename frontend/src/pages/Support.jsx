@@ -35,8 +35,8 @@ export default function Support() {
   return (
     <div className="max-w-5xl mx-auto py-8">
       <SEO 
-        title="Support Center - JobSetu Portal" 
-        description="Need help with your application? Create a support ticket or find contact details for JobSetu Portal customer support."
+        title="Support Center - ApplyNova Portal" 
+        description="Need help with your application? Create a support ticket or find contact details for ApplyNova Portal customer support."
       />
 
       <div className="text-center mb-12">
@@ -61,8 +61,8 @@ export default function Support() {
                 </div>
                 <div>
                   <span className="text-xs text-slate-400 font-semibold block">Email Support</span>
-                  <a href="mailto:support@jobsetu.com" className="text-sm font-medium text-slate-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                    support@jobsetu.com
+                  <a href="mailto:jjmisarajeev@gmail.com" className="text-sm font-medium text-slate-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                    jjmisarajeev@gmail.com
                   </a>
                 </div>
               </div>
@@ -73,8 +73,8 @@ export default function Support() {
                 </div>
                 <div>
                   <span className="text-xs text-slate-400 font-semibold block">WhatsApp Helpline</span>
-                  <a href="https://wa.me/918049123456" target="_blank" rel="noreferrer" className="text-sm font-medium text-slate-900 dark:text-white hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
-                    +91 80 4912 3456
+                  <a href="https://wa.me/919630409952" target="_blank" rel="noreferrer" className="text-sm font-medium text-slate-900 dark:text-white hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                    9630409952
                   </a>
                 </div>
               </div>

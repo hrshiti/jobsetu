@@ -27,8 +27,8 @@ export default function Contact() {
   return (
     <div className="max-w-6xl mx-auto py-8">
       <SEO 
-        title="Contact Us - JobSetu Portal" 
-        description="Get in touch with JobSetu Portal. Send a message, find our office address on the map, or call/email us directly."
+        title="Contact Us - ApplyNova Portal" 
+        description="Get in touch with ApplyNova Portal. Send a message, find our office address on the map, or call/email us directly."
       />
 
       <div className="text-center mb-12">
@@ -53,8 +53,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <span className="text-xs text-slate-400 font-semibold block">Email Us</span>
-                  <a href="mailto:info@jobsetu.com" className="text-sm font-medium text-slate-905 dark:text-white hover:underline">
-                    info@jobsetu.com
+                  <a href="mailto:jjmisarajeev@gmail.com" className="text-sm font-medium text-slate-905 dark:text-white hover:underline">
+                    jjmisarajeev@gmail.com
                   </a>
                 </div>
               </div>
@@ -66,7 +66,7 @@ export default function Contact() {
                 <div>
                   <span className="text-xs text-slate-400 font-semibold block">Call Us</span>
                   <span className="text-sm font-medium text-slate-905 dark:text-white">
-                    +91 80 4912 3456
+                    9630409952
                   </span>
                 </div>
               </div>
@@ -78,7 +78,7 @@ export default function Contact() {
                 <div>
                   <span className="text-xs text-slate-400 font-semibold block">Office Address</span>
                   <span className="text-sm font-medium text-slate-905 dark:text-white">
-                    JobSetu Portal HQ, Sector 6, HSR Layout, Bengaluru, Karnataka, 560102
+                    rajeev, Barod, Post Office - SalayTehsil - Aron, District - GunaMadhya Pradesh - 473101
                   </span>
                 </div>
               </div>

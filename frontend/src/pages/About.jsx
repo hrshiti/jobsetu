@@ -22,7 +22,7 @@ const VALUES = [
 ];
 
 const TIMELINE = [
-  { year: '2023', title: 'Founding Year', desc: 'JobSetu Portal launched to address complex, slow job applications.' },
+  { year: '2023', title: 'Founding Year', desc: 'ApplyNova Portal launched to address complex, slow job applications.' },
   { year: '2024', title: 'V2 Launch & Scalability', desc: 'Enhanced file processing, dynamic applications indexation, and support workflows.' },
   { year: '2025', title: 'Trusted by 100+ Brands', desc: 'Partnered with fast-growing brands across India and USA for automated parsing.' },
   { year: '2026', title: 'Razorpay Compliance Integration', desc: 'Established full compliance policies for Razorpay merchant verification and secure applications.' }
@@ -33,7 +33,7 @@ export default function About() {
     <div className="py-8 space-y-16">
       <SEO 
         title="About Us - Our Story & Values" 
-        description="Learn about the mission, vision, and core values of JobSetu Portal. Read our timeline from launch to Razorpay compliance verification."
+        description="Learn about the mission, vision, and core values of ApplyNova Portal. Read our timeline from launch to Razorpay compliance verification."
       />
 
       {/* Hero Section */}
@@ -45,7 +45,7 @@ export default function About() {
           Simplifying Careers
         </h1>
         <p className="text-slate-500 dark:text-slate-400 mt-3 text-base max-w-xl mx-auto leading-relaxed">
-          We built JobSetu Portal to bridge the gap between brilliant candidates and verified growth-stage startups.
+          We built ApplyNova Portal to bridge the gap between brilliant candidates and verified growth-stage startups.
         </p>
       </div>
 
@@ -54,10 +54,10 @@ export default function About() {
         <div className="space-y-6">
           <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 dark:text-white">Our Story</h2>
           <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
-            Applying to jobs shouldn't feel like a chore. For years, candidates faced endless login forms, redundant fields, and silent rejections. We created JobSetu Portal to simplify this process: only one unified application flow with comprehensive fields and direct verification support.
+            Applying to jobs shouldn't feel like a chore. For years, candidates faced endless login forms, redundant fields, and silent rejections. We created ApplyNova Portal to simplify this process: only one unified application flow with comprehensive fields and direct verification support.
           </p>
           <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
-            Now, JobSetu Portal processes thousands of submissions weekly. We provide clean, structured metadata files to partner recruiters, allowing them to review, sort, and respond in record time.
+            Now, ApplyNova Portal processes thousands of submissions weekly. We provide clean, structured metadata files to partner recruiters, allowing them to review, sort, and respond in record time.
           </p>
         </div>
 
