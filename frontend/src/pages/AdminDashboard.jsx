@@ -51,8 +51,8 @@ export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState('overview'); // overview, jobs, applications, subscribers, plans
 
   // Login form state
-  const [loginEmail, setLoginEmail] = useState('admin@jobsetu.com');
-  const [loginPassword, setLoginPassword] = useState('Admin@123');
+  const [loginEmail, setLoginEmail] = useState('');
+  const [loginPassword, setLoginPassword] = useState('');
   const [loginError, setLoginError] = useState('');
   const [isSubmittingLogin, setIsSubmittingLogin] = useState(false);
 
@@ -400,12 +400,6 @@ export default function AdminDashboard() {
               <ChevronRight className="w-4 h-4" />
             </button>
           </form>
-
-          <div className="mt-6 pt-6 border-t border-slate-100 dark:border-slate-800 text-center">
-            <p className="text-xs text-slate-400">
-              Default Credentials: <strong className="text-indigo-600 dark:text-indigo-400">admin@jobsetu.com</strong> / <strong className="text-indigo-600 dark:text-indigo-400">Admin@123</strong>
-            </p>
-          </div>
         </motion.div>
       </div>
     );
