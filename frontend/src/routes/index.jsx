@@ -11,6 +11,7 @@ const ThankYou = lazy(() => import('../pages/ThankYou'));
 const Support = lazy(() => import('../pages/Support'));
 const FAQ = lazy(() => import('../pages/FAQ'));
 const Policy = lazy(() => import('../pages/Policy'));
+const AdminDashboard = lazy(() => import('../pages/AdminDashboard'));
 const NotFound = lazy(() => import('../pages/NotFound'));
 
 // Loader component for suspense fallback
@@ -37,6 +38,7 @@ export default function AppRoutes() {
         <Route path="/thank-you" element={<ThankYou />} />
         <Route path="/support" element={<Support />} />
         <Route path="/faq" element={<FAQ />} />
+        <Route path="/admin" element={<AdminDashboard />} />
         
         {/* Policy Routes */}
         <Route path="/privacy" element={<Policy type="privacy" />} />

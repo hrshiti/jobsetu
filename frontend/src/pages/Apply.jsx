@@ -8,7 +8,7 @@ import {
 } from 'lucide-react';
 import { JOBS_LIST } from '../constants/jobs';
 import { useToast } from '../components/Toast';
-import { submitJobApplication } from '../services/api';
+import { submitJobApplication, fetchSubscriptionPlans, createRazorpayOrder, verifyRazorpayPayment } from '../services/api';
 import SEO from '../components/SEO';
 
 const STEPS = [
@@ -157,22 +157,133 @@ export default function Apply() {
     setStep((prev) => Math.max(prev - 1, 1));
   };
 
-  // Submit complete form
+  const [plans, setPlans] = useState([]);
+  const [selectedPlan, setSelectedPlan] = useState(null);
+
+  // Load active subscription plans from MongoDB API
+  useEffect(() => {
+    fetchSubscriptionPlans()
+      .then((res) => {
+        if (res?.data && res.data.length > 0) {
+          setPlans(res.data);
+          const targetPlanId = searchParams.get('planId');
+          const found = res.data.find(p => p.planId === targetPlanId || p._id === targetPlanId);
+          setSelectedPlan(found || res.data[0]);
+        }
+      })
+      .catch((err) => console.log('Error loading plans on apply:', err));
+  }, [searchParams]);
+
+  const loadRazorpayScript = () => {
+    return new Promise((resolve) => {
+      if (window.Razorpay) {
+        resolve(true);
+        return;
+      }
+      const script = document.createElement('script');
+      script.src = 'https://checkout.razorpay.com/v1/checkout.js';
+      script.onload = () => resolve(true);
+      script.onerror = () => resolve(false);
+      document.body.appendChild(script);
+    });
+  };
+
+  // Submit complete form with mandatory Razorpay Subscription payment
   const onSubmit = async (data) => {
     if (!data.declaration) {
-      addToast('Please accept the declaration terms to submit application.', 'warning');
+      alert('Please accept the declaration terms to submit application.');
+      return;
+    }
+
+    if (!selectedPlan) {
+      alert('Please select a mandatory subscription plan to post your application.');
       return;
     }
 
     setLoading(true);
+
     try {
-      const response = await submitJobApplication(data);
-      addToast(response.data.message, 'success');
-      // Redirect to thank you page with reference ID
-      navigate(`/thank-you?appId=${response.data.applicationId}`);
+      // 1. Create Razorpay order on backend
+      const orderRes = await createRazorpayOrder({
+        amount: selectedPlan.price,
+        planId: selectedPlan.planId || selectedPlan._id,
+        subscriberName: `${data.firstName} ${data.lastName}`,
+        subscriberEmail: data.email,
+        subscriberPhone: data.phone
+      });
+
+      if (!orderRes.success) {
+        throw new Error(orderRes.message || 'Failed to create Razorpay order');
+      }
+
+      // Load Razorpay JS SDK
+      const scriptLoaded = await loadRazorpayScript();
+
+      if (scriptLoaded && window.Razorpay && orderRes.key && !orderRes.key.includes('placeholder')) {
+        // Open Razorpay Live Checkout modal
+        const options = {
+          key: orderRes.key,
+          amount: orderRes.amount,
+          currency: orderRes.currency || 'INR',
+          name: 'JobSetu Candidate Portal',
+          description: `Mandatory Application Subscription - ${selectedPlan.name}`,
+          order_id: orderRes.orderId,
+          prefill: {
+            name: `${data.firstName} ${data.lastName}`,
+            email: data.email,
+            contact: data.phone
+          },
+          theme: {
+            color: '#2563EB'
+          },
+          handler: async function (razorpayResp) {
+            try {
+              // Verify payment
+              await verifyRazorpayPayment({
+                ...razorpayResp,
+                subscriberName: `${data.firstName} ${data.lastName}`,
+                subscriberEmail: data.email,
+                subscriberPhone: data.phone,
+                planId: selectedPlan.planId || selectedPlan._id,
+                amount: selectedPlan.price
+              });
+
+              // Submit candidate application to MongoDB
+              const response = await submitJobApplication({ ...data, planId: selectedPlan.planId || selectedPlan._id });
+              navigate(`/thank-you?appId=${response.data.applicationId}`);
+            } catch (err) {
+              alert('Payment verification or application submission failed. Please contact support.');
+            } finally {
+              setLoading(false);
+            }
+          },
+          modal: {
+            ondismiss: function () {
+              setLoading(false);
+            }
+          }
+        };
+
+        const rzp = new window.Razorpay(options);
+        rzp.open();
+      } else {
+        // Fallback simulation when key is testing placeholder
+        await verifyRazorpayPayment({
+          razorpay_order_id: orderRes.orderId,
+          razorpay_payment_id: `pay_sim_${Date.now()}`,
+          subscriberName: `${data.firstName} ${data.lastName}`,
+          subscriberEmail: data.email,
+          subscriberPhone: data.phone,
+          planId: selectedPlan.planId || selectedPlan._id,
+          amount: selectedPlan.price
+        });
+
+        const response = await submitJobApplication({ ...data, planId: selectedPlan.planId || selectedPlan._id });
+        navigate(`/thank-you?appId=${response.data.applicationId}`);
+        setLoading(false);
+      }
     } catch (error) {
-      addToast(error.message || 'Submission failed. Please try again.', 'error');
-    } finally {
+      alert(error.message || 'Submission failed. Please try again.');
       setLoading(false);
     }
   };
@@ -845,6 +956,47 @@ export default function Apply() {
                 </div>
               </div>
 
+              {/* Mandatory Subscription Plan Selection */}
+              <div className="p-6 rounded-3xl bg-blue-50/50 dark:bg-slate-950 border border-blue-200/80 dark:border-slate-800 space-y-4 mt-6">
+                <div>
+                  <span className="px-3 py-1 rounded-full bg-blue-600 text-white text-[10px] font-extrabold uppercase tracking-wider">
+                    Mandatory Subscription Step
+                  </span>
+                  <h4 className="text-lg font-black text-slate-900 dark:text-white mt-1">
+                    Select Candidate Application Plan
+                  </h4>
+                  <p className="text-xs text-slate-500 dark:text-slate-400">
+                    A subscription payment via Razorpay is mandatory to process and post your job application.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {plans.map((p) => {
+                    const isSelected = selectedPlan && (selectedPlan._id === p._id || selectedPlan.planId === p.planId);
+                    return (
+                      <div
+                        key={p._id || p.planId}
+                        onClick={() => setSelectedPlan(p)}
+                        className={`p-5 rounded-2xl border-2 cursor-pointer transition-all relative ${
+                          isSelected
+                            ? 'border-blue-600 bg-white dark:bg-slate-900 shadow-md shadow-blue-500/10'
+                            : 'border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950/60 opacity-80'
+                        }`}
+                      >
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="font-extrabold text-slate-900 dark:text-white text-sm">{p.name}</span>
+                          <span className="font-black text-blue-600 dark:text-blue-400 text-lg">₹{p.price}</span>
+                        </div>
+                        <p className="text-[11px] text-slate-500 dark:text-slate-400 mb-3 leading-relaxed">{p.description}</p>
+                        <div className="text-[11px] text-emerald-600 dark:text-emerald-400 font-semibold flex items-center gap-1">
+                          <CheckCircle2 className="w-3.5 h-3.5" /> Includes {p.billingCycle || 'Monthly Pass'}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
               {/* Declaration Checkbox */}
               <div className="p-6 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 space-y-4 mt-6">
                 <span className="block text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider">Candidate Declaration</span>
@@ -878,31 +1030,32 @@ export default function Apply() {
             type="button"
             onClick={handlePrevStep}
             disabled={step === 1 || loading}
-            className="flex items-center gap-2 px-5 py-2.5 rounded-full border border-slate-200 dark:border-slate-850 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm font-semibold transition-colors disabled:opacity-50"
+            className="px-5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 font-semibold text-xs disabled:opacity-50 hover:bg-slate-50 dark:hover:bg-slate-900 transition-all flex items-center gap-2"
           >
-            <ArrowLeft className="w-4 h-4" />
-            <span>Previous</span>
+            <ArrowLeft className="w-4 h-4" /> Previous
           </button>
 
           {step < 5 ? (
             <button
               type="button"
               onClick={handleNextStep}
-              className="flex items-center gap-2 px-6 py-2.5 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-sm font-semibold shadow-md shadow-indigo-500/20 hover:shadow-lg transition-all"
+              className="px-6 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs shadow-md shadow-blue-500/20 transition-all flex items-center gap-2"
             >
-              <span>Next Step</span>
-              <ArrowRight className="w-4 h-4" />
+              Next Step <ArrowRight className="w-4 h-4" />
             </button>
           ) : (
             <button
               type="submit"
               disabled={loading}
-              className="flex items-center justify-center gap-2 px-8 py-3 rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-505 hover:to-teal-505 text-white text-sm font-semibold shadow-md shadow-emerald-500/20 hover:shadow-lg transition-all"
+              className="px-8 py-3.5 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-sm shadow-xl shadow-blue-500/25 transition-all flex items-center gap-2"
             >
               {loading ? (
-                <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                <span>Processing Payment...</span>
               ) : (
-                'Submit Application'
+                <>
+                  <span>Pay ₹{selectedPlan?.price || 0} & Submit Application</span>
+                  <ArrowRight className="w-4 h-4" />
+                </>
               )}
             </button>
           )}

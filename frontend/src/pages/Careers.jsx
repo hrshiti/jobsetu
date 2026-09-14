@@ -1,29 +1,41 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Briefcase, MapPin, Clock, Search, ChevronRight, SlidersHorizontal, AlertCircle } from 'lucide-react';
 import SEO from '../components/SEO';
 import { JOBS_LIST, DEPARTMENTS, JOB_TYPES, LOCATIONS } from '../constants/jobs';
+import { fetchJobs } from '../services/api';
 
 export default function Careers() {
   const navigate = useNavigate();
+  const [jobsList, setJobsList] = useState(JOBS_LIST);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedDept, setSelectedDept] = useState('All Departments');
   const [selectedType, setSelectedType] = useState('All Types');
   const [selectedLoc, setSelectedLoc] = useState('All Locations');
   const [expandedJobId, setExpandedJobId] = useState(null);
 
+  useEffect(() => {
+    fetchJobs()
+      .then((res) => {
+        if (res?.data && res.data.length > 0) {
+          setJobsList(res.data);
+        }
+      })
+      .catch((err) => console.log('Using static jobs fallback:', err));
+  }, []);
+
   const filteredJobs = useMemo(() => {
-    return JOBS_LIST.filter((job) => {
-      const matchesSearch = job.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                            job.description.toLowerCase().includes(searchTerm.toLowerCase());
+    return jobsList.filter((job) => {
+      const matchesSearch = (job.title || '').toLowerCase().includes(searchTerm.toLowerCase()) || 
+                            (job.description || '').toLowerCase().includes(searchTerm.toLowerCase());
       const matchesDept = selectedDept === 'All Departments' || job.department === selectedDept;
       const matchesType = selectedType === 'All Types' || job.type === selectedType;
       const matchesLoc = selectedLoc === 'All Locations' || job.location === selectedLoc;
       
       return matchesSearch && matchesDept && matchesType && matchesLoc;
     });
-  }, [searchTerm, selectedDept, selectedType, selectedLoc]);
+  }, [jobsList, searchTerm, selectedDept, selectedType, selectedLoc]);
 
   const toggleJobExpand = (id) => {
     setExpandedJobId(expandedJobId === id ? null : id);
