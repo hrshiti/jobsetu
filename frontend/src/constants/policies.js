@@ -75,7 +75,7 @@ export const POLICIES = {
     sections: [
       {
         heading: '1. Application Cancellation',
-        content: 'Once an application is submitted on ApplyNova Portal, it cannot be canceled or recalled by the candidate from the web interface. However, candidates can request the removal or deletion of their application details by contacting our support team at jjmisarajeev@gmail.com.'
+        content: 'Once an application is submitted on ApplyNova Portal, it cannot be canceled or recalled by the candidate from the web interface. However, candidates can request the removal or deletion of their application details by contacting our support team at support@applynova.in.'
       },
       {
         heading: '2. System Initiated Cancellation',

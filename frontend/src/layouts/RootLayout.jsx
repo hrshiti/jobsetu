@@ -186,9 +186,9 @@ export default function RootLayout({ children }) {
               ApplyNova Portal is a secure, premium application gateway connecting top talent with industry-leading startups and enterprise companies.
             </p>
             <div className="space-y-2 text-sm text-slate-600 dark:text-slate-300">
-              <p>📍 rajeev, Barod, Post Office - SalayTehsil - Aron, District - GunaMadhya Pradesh - 473101</p>
-              <p>✉️ jjmisarajeev@gmail.com</p>
-              <p>📞 9630409952</p>
+              <p>📍 ApplyNova Portal HQ, Tech Park, Sector 62, Noida, Uttar Pradesh - 201301, India</p>
+              <p>✉️ support@applynova.in</p>
+              <p>📞 +91 98765 43210</p>
             </div>
           </div>
           <div>
@@ -265,7 +265,7 @@ export default function RootLayout({ children }) {
 
       {/* Floating WhatsApp Widget */}
       <a
-        href="https://wa.me/918049123456"
+        href="https://wa.me/919876543210"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 left-6 z-40 w-12 h-12 rounded-full bg-emerald-500 hover:bg-emerald-600 flex items-center justify-center text-white shadow-lg hover:scale-110 transition-transform duration-300"

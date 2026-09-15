@@ -61,8 +61,8 @@ export default function Support() {
                 </div>
                 <div>
                   <span className="text-xs text-slate-400 font-semibold block">Email Support</span>
-                  <a href="mailto:jjmisarajeev@gmail.com" className="text-sm font-medium text-slate-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                    jjmisarajeev@gmail.com
+                  <a href="mailto:support@applynova.in" className="text-sm font-medium text-slate-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                    support@applynova.in
                   </a>
                 </div>
               </div>
@@ -73,8 +73,8 @@ export default function Support() {
                 </div>
                 <div>
                   <span className="text-xs text-slate-400 font-semibold block">WhatsApp Helpline</span>
-                  <a href="https://wa.me/919630409952" target="_blank" rel="noreferrer" className="text-sm font-medium text-slate-900 dark:text-white hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
-                    9630409952
+                  <a href="https://wa.me/919876543210" target="_blank" rel="noreferrer" className="text-sm font-medium text-slate-900 dark:text-white hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                    +91 98765 43210
                   </a>
                 </div>
               </div>

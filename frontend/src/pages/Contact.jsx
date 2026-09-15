@@ -53,8 +53,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <span className="text-xs text-slate-400 font-semibold block">Email Us</span>
-                  <a href="mailto:jjmisarajeev@gmail.com" className="text-sm font-medium text-slate-905 dark:text-white hover:underline">
-                    jjmisarajeev@gmail.com
+                  <a href="mailto:support@applynova.in" className="text-sm font-medium text-slate-905 dark:text-white hover:underline">
+                    support@applynova.in
                   </a>
                 </div>
               </div>
@@ -66,7 +66,7 @@ export default function Contact() {
                 <div>
                   <span className="text-xs text-slate-400 font-semibold block">Call Us</span>
                   <span className="text-sm font-medium text-slate-905 dark:text-white">
-                    9630409952
+                    +91 98765 43210
                   </span>
                 </div>
               </div>
@@ -78,7 +78,7 @@ export default function Contact() {
                 <div>
                   <span className="text-xs text-slate-400 font-semibold block">Office Address</span>
                   <span className="text-sm font-medium text-slate-905 dark:text-white">
-                    rajeev, Barod, Post Office - SalayTehsil - Aron, District - GunaMadhya Pradesh - 473101
+                    ApplyNova Portal HQ, Tech Park, Sector 62, Noida, Uttar Pradesh - 201301, India
                   </span>
                 </div>
               </div>

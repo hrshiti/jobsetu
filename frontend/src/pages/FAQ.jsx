@@ -26,7 +26,7 @@ const FAQS = [
   },
   {
     q: 'How can I update or delete my submitted application?',
-    a: 'If you want to modify your details or delete your application records, simply submit a request using our Support Page or email us directly at jjmisarajeev@gmail.com.'
+    a: 'If you want to modify your details or delete your application records, simply submit a request using our Support Page or email us directly at support@applynova.in.'
   }
 ];
 
