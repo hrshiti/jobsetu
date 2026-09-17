@@ -35,6 +35,8 @@ export const JOBS_LIST = [
     location: 'Bengaluru, India',
     salary: '₹18,00,000 - ₹28,00,000 / year',
     experience: '4+ years',
+    startDate: '2026-09-01',
+    expiryDate: '2026-10-31',
     description: 'We are looking for a Senior Frontend Engineer to build slick, high-performance web experiences using React, Vite, and Tailwind CSS. You will work on user-facing features, animation systems, and performance optimization.',
     requirements: [
       'Strong proficiency in React 18/19, TypeScript, and Tailwind CSS.',
@@ -51,6 +53,8 @@ export const JOBS_LIST = [
     location: 'Remote',
     salary: '₹12,00,000 - ₹22,00,000 / year',
     experience: '2-5 years',
+    startDate: '2026-09-05',
+    expiryDate: '2026-11-15',
     description: 'Join our engineering team to develop and scale both frontend interfaces and robust backend APIs. You will own features end-to-end, from database queries to UI styling.',
     requirements: [
       'Proficiency in Node.js, Express, and React.',
@@ -67,6 +71,8 @@ export const JOBS_LIST = [
     location: 'Mumbai, India',
     salary: '₹10,00,000 - ₹18,00,000 / year',
     experience: '3+ years',
+    startDate: '2026-09-02',
+    expiryDate: '2026-10-15',
     description: 'We are seeking a Product UI/UX Designer to craft beautiful, modern, minimal, and intuitive experiences. You will design interfaces similar to Stripe, Linear, and Notion.',
     requirements: [
       'Strong portfolio showcasing visual design, layout hierarchy, and user flows.',
@@ -83,6 +89,8 @@ export const JOBS_LIST = [
     location: 'Bengaluru, India',
     salary: '₹20,00,000 - ₹35,00,000 / year',
     experience: '5+ years',
+    startDate: '2026-09-10',
+    expiryDate: '2026-10-25',
     description: 'Drive the roadmap of our core products. Work closely with design, engineering, and support to define specs, orchestrate releases, and analyze product analytics.',
     requirements: [
       'Prior experience as an engineer or product manager in a technical B2B/SaaS domain.',
@@ -99,6 +107,8 @@ export const JOBS_LIST = [
     location: 'Remote',
     salary: '₹8,00,000 - ₹15,00,000 / year',
     experience: '2+ years',
+    startDate: '2026-09-12',
+    expiryDate: '2026-11-01',
     description: 'Help us scale candidate acquisition and employer branding. You will run paid ads, build organic channels, optimize SEO, and design copy campaigns.',
     requirements: [
       'Proven track record of scaling user acquisition channels.',
@@ -115,6 +125,8 @@ export const JOBS_LIST = [
     location: 'Delhi NCR, India',
     salary: '₹4,00,000 - ₹7,00,000 / year',
     experience: '1-3 years',
+    startDate: '2026-09-15',
+    expiryDate: '2026-10-20',
     description: 'Provide top-tier customer support to our users. Handle queries via live chat, email, and call. Help troubleshoot user profile settings and job submissions.',
     requirements: [
       'Excellent verbal and written communication in English.',

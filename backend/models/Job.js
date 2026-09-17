@@ -11,6 +11,8 @@ const jobSchema = new mongoose.Schema({
   requirements: [{ type: String }],
   responsibilities: [{ type: String }],
   status: { type: String, enum: ['active', 'closed'], default: 'active' },
+  startDate: { type: String, default: '' },
+  expiryDate: { type: String, default: '' },
   applicantsCount: { type: Number, default: 0 }
 }, { timestamps: true });
 

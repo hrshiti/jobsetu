@@ -37,13 +37,21 @@ export default function Apply() {
   const [sameAddress, setSameAddress] = useState(false);
 
   // Load Job details if jobId is passed in search query
+  // Load Job details if jobId is passed in search query
   useEffect(() => {
     const jobId = searchParams.get('jobId');
     if (jobId) {
-      const job = JOBS_LIST.find((j) => j.id === jobId);
-      if (job) {
-        setSelectedJob(job);
-      }
+      const staticJob = JOBS_LIST.find((j) => j.id === jobId || j._id === jobId);
+      if (staticJob) setSelectedJob(staticJob);
+
+      fetchJobs()
+        .then((res) => {
+          if (res?.data) {
+            const found = res.data.find(j => j._id === jobId || j.id === jobId);
+            if (found) setSelectedJob(found);
+          }
+        })
+        .catch(() => null);
     }
   }, [searchParams]);
 
@@ -301,9 +309,28 @@ export default function Apply() {
           Apply For A Position
         </h1>
         {selectedJob ? (
-          <p className="text-slate-500 dark:text-slate-400 mt-2 text-sm">
-            Applying for <span className="font-bold text-blue-600 dark:text-blue-400">{selectedJob.title}</span> ({selectedJob.department})
-          </p>
+          <div className="mt-2 space-y-2">
+            <p className="text-slate-500 dark:text-slate-400 text-sm">
+              Applying for <span className="font-bold text-blue-600 dark:text-blue-400">{selectedJob.title}</span> ({selectedJob.department})
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-2 text-xs font-medium">
+              {selectedJob.startDate && (
+                <span className="px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-300 border border-emerald-200/50 dark:border-emerald-800/40">
+                  📅 Start Date: {new Date(selectedJob.startDate).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}
+                </span>
+              )}
+              {selectedJob.expiryDate && (
+                <span className={`px-3 py-1 rounded-full border ${
+                  new Date(selectedJob.expiryDate) < new Date()
+                    ? 'bg-rose-50 text-rose-700 dark:bg-rose-950/60 dark:text-rose-300 border-rose-200/50'
+                    : 'bg-amber-50 text-amber-700 dark:bg-amber-950/60 dark:text-amber-300 border-amber-200/50'
+                }`}>
+                  ⏳ Expiry Date: {new Date(selectedJob.expiryDate).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}
+                  {new Date(selectedJob.expiryDate) < new Date() && ' (Expired)'}
+                </span>
+              )}
+            </div>
+          </div>
         ) : (
           <p className="text-slate-500 dark:text-slate-400 mt-2 text-sm">
             Please submit your professional credentials below.

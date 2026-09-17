@@ -82,6 +82,8 @@ export default function AdminDashboard() {
     type: 'Full-Time',
     experience: '1-3 Years',
     salary: '₹10,000 - ₹15,000 / month',
+    startDate: '',
+    expiryDate: '',
     description: '',
     requirements: '',
     responsibilities: '',
@@ -165,6 +167,8 @@ export default function AdminDashboard() {
   // Job CRUD Handlers
   const handleOpenCreateJob = () => {
     setEditingJob(null);
+    const todayStr = new Date().toISOString().split('T')[0];
+    const defaultExpiry = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
     setJobForm({
       title: '',
       department: 'Engineering',
@@ -172,6 +176,8 @@ export default function AdminDashboard() {
       type: 'Full-Time',
       experience: '1-3 Years',
       salary: '₹10,000 - ₹15,000 / month',
+      startDate: todayStr,
+      expiryDate: defaultExpiry,
       description: '',
       requirements: '',
       responsibilities: '',
@@ -189,6 +195,8 @@ export default function AdminDashboard() {
       type: job.type || 'Full-Time',
       experience: job.experience || '',
       salary: job.salary || '',
+      startDate: job.startDate ? job.startDate.split('T')[0] : '',
+      expiryDate: job.expiryDate ? job.expiryDate.split('T')[0] : '',
       description: job.description || '',
       requirements: Array.isArray(job.requirements) ? job.requirements.join('\n') : (job.requirements || ''),
       responsibilities: Array.isArray(job.responsibilities) ? job.responsibilities.join('\n') : (job.responsibilities || ''),
@@ -1110,6 +1118,29 @@ export default function AdminDashboard() {
                     type="text"
                     value={jobForm.salary}
                     onChange={(e) => setJobForm({ ...jobForm, salary: e.target.value })}
+                    className="w-full px-3 py-2.5 rounded-xl border bg-slate-50 dark:bg-slate-950 border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white"
+                  />
+                </div>
+              </div>
+
+              {/* Start Date and Expiry Date Options */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label className="block font-semibold text-slate-700 dark:text-slate-300 mb-1">Job Starting Date</label>
+                  <input
+                    type="date"
+                    value={jobForm.startDate}
+                    onChange={(e) => setJobForm({ ...jobForm, startDate: e.target.value })}
+                    className="w-full px-3 py-2.5 rounded-xl border bg-slate-50 dark:bg-slate-950 border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white"
+                  />
+                </div>
+
+                <div>
+                  <label className="block font-semibold text-slate-700 dark:text-slate-300 mb-1">Application Expiry Date</label>
+                  <input
+                    type="date"
+                    value={jobForm.expiryDate}
+                    onChange={(e) => setJobForm({ ...jobForm, expiryDate: e.target.value })}
                     className="w-full px-3 py-2.5 rounded-xl border bg-slate-50 dark:bg-slate-950 border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white"
                   />
                 </div>

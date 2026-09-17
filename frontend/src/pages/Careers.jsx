@@ -149,6 +149,21 @@ export default function Careers() {
                       <span className="font-medium text-blue-600 dark:text-blue-400">
                         {job.salary}
                       </span>
+                      {job.startDate && (
+                        <span className="inline-flex items-center gap-1 text-xs px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-medium">
+                          📅 Starts: {new Date(job.startDate).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}
+                        </span>
+                      )}
+                      {job.expiryDate && (
+                        <span className={`inline-flex items-center gap-1 text-xs px-2 py-0.5 rounded-md font-medium ${
+                          new Date(job.expiryDate) < new Date() 
+                            ? 'bg-rose-100 text-rose-700 dark:bg-rose-950/60 dark:text-rose-300' 
+                            : 'bg-amber-50 text-amber-700 dark:bg-amber-950/50 dark:text-amber-300 border border-amber-200/50 dark:border-amber-800/40'
+                        }`}>
+                          ⏳ Expiry: {new Date(job.expiryDate).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}
+                          {new Date(job.expiryDate) < new Date() && ' (Expired)'}
+                        </span>
+                      )}
                     </div>
                   </div>
 
@@ -181,14 +196,16 @@ export default function Careers() {
                               </p>
                             </div>
 
-                            <div>
-                              <h4 className="font-bold text-sm text-slate-900 dark:text-white mb-2">Requirements</h4>
-                              <ul className="list-disc pl-5 space-y-2 text-sm text-slate-600 dark:text-slate-400">
-                                {job.requirements.map((req, index) => (
-                                  <li key={index}>{req}</li>
-                                ))}
-                              </ul>
-                            </div>
+                            {job.requirements && job.requirements.length > 0 && (
+                              <div>
+                                <h4 className="font-bold text-sm text-slate-900 dark:text-white mb-2">Requirements</h4>
+                                <ul className="list-disc pl-5 space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                                  {job.requirements.map((req, index) => (
+                                    <li key={index}>{req}</li>
+                                  ))}
+                                </ul>
+                              </div>
+                            )}
                           </div>
 
                           {/* Quick details & Apply */}
@@ -202,14 +219,41 @@ export default function Careers() {
                                 <span className="text-xs text-slate-400 font-semibold uppercase tracking-wider block">Location Policy</span>
                                 <span className="text-sm font-medium text-slate-900 dark:text-white">{job.location === 'Remote' ? 'Work from Anywhere' : 'On-Site / Hybrid'}</span>
                               </div>
+                              {job.startDate && (
+                                <div>
+                                  <span className="text-xs text-slate-400 font-semibold uppercase tracking-wider block">Job Start Date</span>
+                                  <span className="text-sm font-medium text-emerald-600 dark:text-emerald-400">
+                                    {new Date(job.startDate).toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' })}
+                                  </span>
+                                </div>
+                              )}
+                              {job.expiryDate && (
+                                <div>
+                                  <span className="text-xs text-slate-400 font-semibold uppercase tracking-wider block">Application Expiry Date</span>
+                                  <span className={`text-sm font-medium ${
+                                    new Date(job.expiryDate) < new Date() ? 'text-rose-600 dark:text-rose-400 font-bold' : 'text-amber-600 dark:text-amber-400'
+                                  }`}>
+                                    {new Date(job.expiryDate).toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' })}
+                                  </span>
+                                </div>
+                              )}
                             </div>
 
-                            <button
-                              onClick={() => navigate(`/apply?jobId=${job.id}`)}
-                              className="w-full py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold shadow-md shadow-indigo-500/20 hover:shadow-lg transition-all"
-                            >
-                              Apply for this job
-                            </button>
+                            {job.expiryDate && new Date(job.expiryDate) < new Date() ? (
+                              <button
+                                disabled
+                                className="w-full py-3 rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-400 font-semibold cursor-not-allowed text-center text-xs"
+                              >
+                                Application Closed (Expired)
+                              </button>
+                            ) : (
+                              <button
+                                onClick={() => navigate(`/apply?jobId=${job.id || job._id}`)}
+                                className="w-full py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold shadow-md shadow-indigo-500/20 hover:shadow-lg transition-all"
+                              >
+                                Apply for this job
+                              </button>
+                            )}
                           </div>
                         </div>
                       </div>

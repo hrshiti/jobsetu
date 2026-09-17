@@ -16,6 +16,8 @@ let memoryJobs = [
     requirements: ['React 19 & Vite', 'Node.js & Express', 'MongoDB / SQL', 'REST APIs & WebSockets'],
     responsibilities: ['Build scalable web features', 'Collaborate with UI/UX design team', 'Maintain code quality & automated tests'],
     status: 'active',
+    startDate: '2026-09-01',
+    expiryDate: '2026-10-31',
     applicantsCount: 4,
     createdAt: new Date().toISOString()
   },
@@ -32,6 +34,8 @@ let memoryJobs = [
     requirements: ['Figma & Design Systems', 'User Research & Wireframing', 'Prototyping & Micro-animations'],
     responsibilities: ['Design intuitive interfaces', 'Conduct candidate usability testing', 'Partner with frontend team'],
     status: 'active',
+    startDate: '2026-09-05',
+    expiryDate: '2026-10-15',
     applicantsCount: 2,
     createdAt: new Date().toISOString()
   },
@@ -48,6 +52,8 @@ let memoryJobs = [
     requirements: ['Excellent communication', 'Application tracking tools', 'HR management basics'],
     responsibilities: ['Screen candidate applications', 'Schedule interviews', 'Maintain HR databases'],
     status: 'active',
+    startDate: '2026-09-10',
+    expiryDate: '2026-11-01',
     applicantsCount: 1,
     createdAt: new Date().toISOString()
   }
@@ -102,7 +108,7 @@ export const getJobById = async (req, res) => {
 
 export const createJob = async (req, res) => {
   try {
-    const { title, department, location, type, experience, salary, description, requirements, responsibilities, status } = req.body;
+    const { title, department, location, type, experience, salary, description, requirements, responsibilities, status, startDate, expiryDate } = req.body;
 
     if (!title || !department || !location || !description) {
       return res.status(400).json({ success: false, message: 'Please provide all required job fields' });
@@ -119,6 +125,8 @@ export const createJob = async (req, res) => {
       requirements: Array.isArray(requirements) ? requirements : (requirements ? requirements.split(',').map(s => s.trim()) : []),
       responsibilities: Array.isArray(responsibilities) ? responsibilities : (responsibilities ? responsibilities.split(',').map(s => s.trim()) : []),
       status: status || 'active',
+      startDate: startDate || new Date().toISOString().split('T')[0],
+      expiryDate: expiryDate || '',
       applicantsCount: 0
     };
 
