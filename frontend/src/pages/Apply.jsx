@@ -8,7 +8,7 @@ import {
 } from 'lucide-react';
 import { JOBS_LIST } from '../constants/jobs';
 import { useToast } from '../components/Toast';
-import { submitJobApplication, fetchSubscriptionPlans, createRazorpayOrder, verifyRazorpayPayment } from '../services/api';
+import { fetchJobs, submitJobApplication, fetchSubscriptionPlans, createRazorpayOrder, verifyRazorpayPayment } from '../services/api';
 import SEO from '../components/SEO';
 
 const STEPS = [
